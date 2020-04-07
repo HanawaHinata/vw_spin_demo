@@ -1,0 +1,48 @@
+<html lang="zh">
+<head>
+
+    <style>
+        .vw_box{
+            width: 100%;
+            height: 900px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .vw_logo{
+            display: block;
+        }
+
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+
+</head>
+<body>
+<div id="app">
+    <div class="vw_box">
+        <img class="vw_logo" src="vw.jpg" alt="vw" :style="'animation: spin '+speed+'ms linear 0s infinite normal;'" />
+    </div>
+
+    <input type="number" v-model="speed" />
+</div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                speed:130
+            }
+        })
+    </script>
+</body>
+</html>
